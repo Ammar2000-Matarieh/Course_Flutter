@@ -1,103 +1,118 @@
-// functions main :
+// Abstract Class :
+
+// OOP => Object Orinted Programming :
+
+// Abstract Class :
+// Inhertance :
+// PolyMore Phism :
+// Encabsulation :
+// Interface :
+
+// Abstract Class :
 
 void main() {
-  // For Loop && Switch Case :
+  // instance :
+  App app = App("Ammar", 12, "Male");
+  app.getData();
 
-  List students = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  print("data");
 
-  for (int i = 0; students.length < 5; i++) {
-    print("$i");
-  }
+  Students students = Students("Mohmmad", 14, "Male");
 
-  int age = 30; // init value :
+  students.getData();
 
-  switch (age) {
-    case 19:
-      print("Age not 19");
-      break;
-    case 20:
-      print("Age equal 20");
-      break;
-
-    case 25:
-      print("Age equal 25");
-      break;
-    case 29:
-      print("Age equal 29");
-      break;
-    case 30:
-      print("Age equal 30");
-      break;
-    default:
-
-    // 30 == 30
-  }
-
-  // Data types :
-
-  // int && String && double :
-
-  // List :
-  // 0 1 2 3
-  // List listOfStudents = ["item 1", "item 2", "item 3", "item 4"]; // length = 4;
-
-  // Map : key : value
-
-  // Map<String, dynamic> listOfEmploy = {
-  //   "name": "ahmad",
-  //   "age": 20,
-  //   "id": 1,
-  // }; // Key : Value
-  // key and value => done
-  // print(listOfEmploy.values);
-
-  // For Loop :
-
-  // if conditions :
-
-  // int age4 = 40;
-
-  // if (age4 == 30 && age4 == 20) {
-  //   // conditions :    || => OR  && => AND : =============> T && F == F :
-  //   print("Age equal 30 ");
-  // } else {
-  //   print("Age not equal 30");
-  // }
-
-  // genric type :
-
-  // List<int> ages = [ 23];
-
-  // print(listOfStudents.length);
-
-  // index : 0 => number of elements :
-
-  // print(listOfStudents[3]);
-
-  // int :
-  // int age = 10;
-
-  // print(age);
-
-  // int age1 = 20;
-
-  // int age3 = age1 + age;
-
-  // print(age3);
-
-  // String :
-
-  // String name = "Ammar";
-
-  // print(name.toUpperCase());
-
-  // // double :
-
-  // double a = 20.2;
-
-  // double b = 24.7;
-
-  // double c = a + b;
-
-  // print(c);
+  // Test test = Test();
 }
+
+// extends : => الوراثه :
+
+abstract class Test {
+  String name;
+  int age;
+  String gender;
+  // constractor :
+  Test(this.name, this.age, this.gender);
+  // function => implementation :
+  // function => definition :
+  void getData();
+  // function => implementation :
+  void eat() {
+    print('$name is eating');
+    // code implements :
+  }
+}
+
+class App extends Test {
+  App(super.name, super.age, super.gender);
+
+  @override
+  void getData() {
+    print("Age : $age");
+  }
+}
+
+class Students extends Test {
+  Students(super.name, super.age, super.gender);
+
+  @override
+  void getData() {
+    print("Students ");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// var dog = Dog('Rex');
+  // var cat = Cat('Whiskers');
+
+  // dog.makeSound(); // Rex says Woof!
+  // cat.makeSound(); // Whiskers says Meow!
+
+  // dog.eat(); // Rex is eating
+  // cat.eat(); // Whiskers is eating
+
+  // // هذا سيتسبب في خطأ لأن Animal مجردة
+  // // var animal = Animal('Generic'); // Error!
+
+// abstract class Animal {
+//   // حقل عادي
+//   String name;
+
+//   // constructor
+//   Animal(this.name);
+
+//   // طريقة مجردة (بدون تنفيذ)
+//   void makeSound();
+
+//   // طريقة عادية
+//   void eat() {
+//     print('$name is eating');
+//   }
+// }
+
+// class Dog extends Animal {
+//   Dog(String name) : super(name);
+
+//   @override
+//   void makeSound() {
+//     print('$name says Woof!');
+//   }
+// }
+
+// class Cat extends Animal {
+//   Cat(String name) : super(name);
+
+//   @override
+//   void makeSound() {
+//     print('$name says Meow!');
+//   }
+// }
